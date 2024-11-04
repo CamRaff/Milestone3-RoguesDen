@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url('../images/background.webp');
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+h3 {
+    border-radius: 10px;
+}
