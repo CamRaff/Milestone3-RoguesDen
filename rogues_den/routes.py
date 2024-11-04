@@ -8,6 +8,14 @@ def home():
     return render_template('base.html')
 
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 @app.route('/profile')
 def profile():
     return render_template('profile.html')
+
+@app.route('/characters')
+def characters():
+    return render_template('characters.html')

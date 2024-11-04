@@ -22,11 +22,13 @@
         <!-- Top Navbar -->
         <nav class="red lighten-2">
             <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo">Rogues Den</a>
+                <a href="{{ url_for('home') }}" class="brand-logo center">Rogues Den</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('characters') }}">Characters</a></li>
                     <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
                 </ul>
             </div>
         </nav>
@@ -34,7 +36,9 @@
         <!-- Mobile SideNav-->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('characters') }}">Characters</a></li>
             <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
         </ul>
     </header>
 
