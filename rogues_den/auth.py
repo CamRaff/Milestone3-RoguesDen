@@ -17,7 +17,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash("Welcome back, {}!".format(user.fname), category="success")
                 login_user(user, remember=True)
-                return redirect(url_for("characters.html"))
+                return redirect(url_for("characters"))
             else:
                 flash("Email or Password incorrect", category="danger")
         

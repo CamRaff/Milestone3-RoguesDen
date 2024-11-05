@@ -4,4 +4,33 @@
         <h3 class="center-align white-text red lighten-2">Login</h3>
     </div>
 
+    <div class="row">
+        <form class="col s12 l6 offset-l3" id="loginForm" method="POST" action="{{ url_for('auth.login') }}">
+            <div class="row">
+                <!-- Email Address Field -->
+                <div class="input-field col s12 white-text red lighten-2">
+                    <input class="white-text" id="email" type="email" name="email" minlength="5" maxlength="55"
+                        class="validate" required>
+                    <label class="white-text" for="email">Email Address</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Password Field -->
+                <div class="textbox-tooltip-container " data-tooltip="Passwords must be at least 7 characters">
+                    <div class="input-field col s12 white-text red lighten-2">
+                        <input class="white-text" id="password" type="password" name="password" minlength="7"
+                            maxlength="255" class="validate" required>
+                        <label class="white-text" for="password">Enter Password</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="center-align">
+                <button class="btn-large pulse red lighten-2"><i class="material-icons">Login</i></button>
+            </div>
+        </form>
+    </div>
+
 {% endblock %}
