@@ -3,19 +3,19 @@ from flask_login import UserMixin
 from sqlalchemy import Enum
 
 
-class User(db.Model, UserMixin):
+class Users(db.Model, UserMixin):
     """
-    Schema for the User model
+    Schema for the Users model
     """
-    # schema for the User model
+
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
     fname = db.Column(db.String(100), nullable=False)
     lname = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(500), nullable=False)
     is_active = db.Column(db.Boolean, default=True)
-    character_id = db.relationship('Character', backref='user', lazy=True)
+    character_id = db.relationship('Character', backref='users', lazy=True)
 
     @property
     def is_authenticated(self):
@@ -37,7 +37,7 @@ class Character(db.Model):
     """
     Schema for the Character model
     """
-    # schema for the Character model
+    
     id = db.Column(db.Integer, primary_key=True)
     character_name = db.Column(db.String(20), nullable=False)
     character_race = db.Column(Enum('Dragonborn', 'Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Halfling',
@@ -54,7 +54,7 @@ class Character(db.Model):
     character_wisdom = db.Column(db.Integer, nullable=False)
     character_charisma = db.Column(db.Integer, nullable=False)
     character_background = db.Column(db.Text, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    users_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
 
     def __repr__(self):

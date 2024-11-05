@@ -66,7 +66,7 @@ I wanted to keep the home page relatively simple as this is just an introduction
 
 This is the login page which will either log you in or take you to register if not already registered. Clicking log in will take you to the characters page.
 
-<img src="readme_images/wireframes/register-page.png" alt="Register page image"height="400">
+<img src="readme_images/wireframes/register-page.png" alt="Register page image" height="400">
 
 This is the register page, very similar to the login page. Clicking submit will take you to the characters page.
 
