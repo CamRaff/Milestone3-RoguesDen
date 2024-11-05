@@ -61,7 +61,7 @@ def register():
             db.session.commit()
             login_user(new_user, remember=True)
             flash("New Account Created!", category="success")
-            return redirect(url_for("characters.html"))
+            return redirect(url_for("characters"))
 
         # If validation fails, pass the form data back to the template
         return render_template("register.html", username=username, email=email, fname=fname, lname=lname)
