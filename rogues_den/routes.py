@@ -16,8 +16,12 @@ def home():
 # def login():
 #     return render_template('login.html')
 
-@app.route('/profile')
+@app.route('/profile', methods=["GET"])
+@login_required
 def profile():
+
+    user = Users.query.all()
+
     return render_template('profile.html')
 
 @app.route('/characters')

@@ -74,4 +74,4 @@ def register():
 def logout():
     logout_user()
     flash("You've been successfully logged out", category="success")
-    return redirect(url_for("base.html"))
+    return redirect(url_for("home"))
