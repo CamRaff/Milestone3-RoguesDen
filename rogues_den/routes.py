@@ -20,10 +20,12 @@ def home():
 @login_required
 def profile():
 
-    user = Users.query.all()
+    users = Users.query.get(current_user.id)
 
-    return render_template('profile.html')
+    return render_template('profile.html', users=users)
 
 @app.route('/characters')
+@login_required
 def characters():
+
     return render_template('characters.html')
