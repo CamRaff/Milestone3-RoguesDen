@@ -4,4 +4,84 @@
         <h3 class="center-align white-text red lighten-2">Create Your Character</h3>
     </div>
 
+    <div class="container">
+        <form method="POST" action="{{ url_for('add_character') }}">
+
+            <!-- Character Name -->
+            <div class="input-field center-align white-text red lighten-2">
+                <label for="character_name" class="white-text">Character Name</label>
+                <input type="text" id="character_name" name="character_name" class="white-text" data-length="20" required>
+            </div>
+
+            <!-- Character Race and Class -->
+            <div class="row">
+                <div class="input-field col s6 m6 l6">
+                    <select name="character_race" class="browser-default white-text red lighten-2" required>
+                        <option value="" disabled selected>Select a Race</option>
+                        {% for race in races %}
+                        <option value="{{ race }}">{{ race }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="input-field col s6 m6 l6">
+                    <select name="character_class" class="browser-default white-text red lighten-2" required>
+                        <option value="" disabled selected>Select a Class</option>
+                        {% for chcls in classes %}
+                        <option value="{{ chcls }}">{{ chcls }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <!-- Character level -->
+            <div class="input-field white-text red lighten-2">
+                <label for="character_level" class="white-text">Level</label>
+                <input type="number" id="character_level" name="character_level" min="1" max="20" class="white-text" required>
+            </div>
+
+            <!-- Character stats -->
+            <div class="row">
+
+                <div class="input-field col s4 m4 l4 white-text red lighten-2">
+                    <label for="character_strength" class="white-text">Strength</label>
+                    <input type="number" id="character_strength" name="character_strength" min="1" max="20" class="white-text" required>
+                </div>
+
+                <div class="input-field col s4 m4 l4 white-text red lighten-2">
+                    <label for="character_dexterity" class="white-text">Dexterity</label>
+                    <input type="number" id="character_dexterity" name="character_dexterity" min="1" max="20" class="white-text" required>
+                </div>
+            
+
+                <div class="input-field col s4 m4 l4 white-text red lighten-2">
+                    <label for="character_constitution" class="white-text">Constitution</label>
+                    <input type="number" id="character_constitution" name="character_constitution" min="1" max="20" class="white-text" required>
+                </div>
+
+                <div class="input-field col s4 m4 l4 white-text red lighten-2">
+                    <label for="character_intelligence" class="white-text">Intelligence</label>
+                    <input type="number" id="character_intelligence" name="character_intelligence" min="1" max="20" class="white-text" required>
+                </div>
+
+                <div class="input-field col s4 m4 l4 white-text red lighten-2">
+                    <label for="character_wisdom" class="white-text">Wisdom</label>
+                    <input type="number" id="character_wisdom" name="character_wisdom" min="1" max="20" class="white-text" required>
+                </div>
+
+                <div class="input-field col s4 m4 l4 white-text red lighten-2">
+                    <label for="character_charisma" class="white-text">Charisma</label>
+                    <input type="number" id="character_charisma" name="character_charisma" min="1" max="20" class="white-text" required>
+                </div>
+            </div>
+
+            <!-- Character background -->
+            <div class="input-field white-text red lighten-2">
+                <label for="character_background" class="white-text">Background</label>
+                <textarea id="character_background" name="character_background" class="materialize-textarea"  class="white-text" required></textarea>
+            </div>
+            
+        </form>
+    </div>
+
 {% endblock %}

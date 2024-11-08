@@ -3,6 +3,8 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-image: url('../images/background.webp');
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: overlay;
 }
 
 main {
@@ -21,6 +23,11 @@ p {
     border-radius: 10px;
 }
 
+
+/* .container {
+    background-color: rgba(0,0,0,0.5);
+} */
+
 /* .profile img {
     height: 10vh !important;
     width: 50%;
@@ -33,4 +40,8 @@ p {
 /* .card img {
     height: 50%;
     width: 50%;
+} */
+
+/* .container {
+    opacity: 0.5;
 } */
