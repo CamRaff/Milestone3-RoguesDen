@@ -13,7 +13,8 @@
     </div>
 
     <div class="row">
-        {% for character in characters %}
+        {% set sorted_characters = characters | sort(attribute='character_level') %}
+        {% for character in sorted_characters %}
         <div class="col s12 m6 l4">
             <div class="card-panel red lighten-2 white-text z-depth-1">
                 <div class="row valign-wrapper">
