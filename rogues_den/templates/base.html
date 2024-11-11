@@ -56,7 +56,7 @@
         {% if messages %}
             <div class="container">
                 {% for category, message in messages %}
-                    <div class="card-panel {{ 'green lighten-4 green-text' if category == 'success' else 'red lighten-4 red-text' }}">
+                    <div class="card-panel-message {{ 'green lighten-4 green-text' if category == 'success' else 'red lighten-4 red-text' }}">
                         {{ message }}
                     </div>
                 {% endfor %}

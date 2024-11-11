@@ -11,4 +11,41 @@
             </a>
         </div>
     </div>
+
+    <div class="row">
+        {% for character in characters %}
+        <div class="col s12 m6 l4">
+            <div class="card-panel red lighten-2 white-text z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s5">
+                        {% if character.character_race == 'Dragonborn' %}
+                        <img src="{{ url_for('static', filename='images/races/canva-dragonborn.webp') }}" alt="" class="circle responsive-img">
+                        {% elif character.character_race == 'Dwarf' %}
+                        <img src="{{ url_for('static', filename='images/races/canva-dwarf.webp') }}" alt="" class="circle responsive-img">
+                        {% elif character.character_race == 'Elf' %}
+                        <img src="{{ url_for('static', filename='images/races/canva-elf.webp') }}" alt="" class="circle responsive-img">
+                        {% elif character.character_race == 'Gnome' %}
+                        <img src="{{ url_for('static', filename='images/races/canva-gnome.webp') }}" alt="" class="circle responsive-img">
+                        {% elif character.character_race == 'Half-Elf' %}
+                        <img src="{{ url_for('static', filename='images/races/canva-half-elf.webp') }}" alt="" class="circle responsive-img">
+                        {% elif character.character_race == 'Halfling' %}
+                        <img src="{{ url_for('static', filename='images/races/canva-halfling.webp') }}" alt="" class="circle responsive-img">
+                        {% elif character.character_race == 'Half-Orc' %}
+                        <img src="{{ url_for('static', filename='images/races/canva-half-orc.webp') }}" alt="" class="circle responsive-img">
+                        {% elif character.character_race == 'Human' %}
+                        <img src="{{ url_for('static', filename='images/races/canva-human.webp') }}" alt="" class="circle responsive-img">
+                        {% elif character.character_race == 'Tiefling' %}
+                        <img src="{{ url_for('static', filename='images/races/canva-tiefling.webp') }}" alt="" class="circle responsive-img">
+                        {% endif %}
+                    </div>
+                    <div class="col s10">
+                        <p>{{ character.character_name }}</p>
+                        <p>Level {{ character.character_level }} {{character.character_race}} {{character.character_class}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}

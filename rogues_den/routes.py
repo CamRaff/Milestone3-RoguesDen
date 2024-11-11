@@ -30,8 +30,8 @@ def profile():
 @app.route('/characters')
 @login_required
 def characters():
-
-    return render_template('characters.html')
+    characters = Character.query.filter_by(users_id=current_user.id)
+    return render_template('characters.html', characters=characters)
 
 
 @app.route('/add_character', methods=["GET", "POST"])
@@ -84,8 +84,6 @@ def add_character():
         except ValueError:
             flash("Please ensure all numeric fields contain valid numbers.", category="error")
 
-    # races = ['Dragonborn', 'Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Halfling', 'Half-Orc', 'Human', 'Tiefling']
-    # classes = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard']
     races = [race for race in Character.__table__.columns.character_race.type.enums]
     classes = [chcls for chcls in Character.__table__.columns.character_class.type.enums]
     return render_template('add_character.html', races=races, classes=classes)
