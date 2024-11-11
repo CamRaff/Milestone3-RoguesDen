@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 setTimeout(function() {
+  // Flash Message initialization
   const flashMessages = document.querySelectorAll('.card-panel-message');
   flashMessages.forEach(msg => msg.style.display = 'none');
 }, 5000);

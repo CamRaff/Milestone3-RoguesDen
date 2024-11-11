@@ -18,29 +18,33 @@
             <div class="card-panel red lighten-2 white-text z-depth-1">
                 <div class="row valign-wrapper">
                     <div class="col s5">
+                        <!-- Elif to display the correct image for the chosen race -->
                         {% if character.character_race == 'Dragonborn' %}
-                        <img src="{{ url_for('static', filename='images/races/canva-dragonborn.webp') }}" alt="" class="circle responsive-img">
+                        <img src="{{ url_for('static', filename='images/races/canva-dragonborn.webp') }}" alt="Dragonborn image" class="circle responsive-img">
                         {% elif character.character_race == 'Dwarf' %}
-                        <img src="{{ url_for('static', filename='images/races/canva-dwarf.webp') }}" alt="" class="circle responsive-img">
+                        <img src="{{ url_for('static', filename='images/races/canva-dwarf.webp') }}" alt="Dwarf image" class="circle responsive-img">
                         {% elif character.character_race == 'Elf' %}
-                        <img src="{{ url_for('static', filename='images/races/canva-elf.webp') }}" alt="" class="circle responsive-img">
+                        <img src="{{ url_for('static', filename='images/races/canva-elf.webp') }}" alt="Elf image" class="circle responsive-img">
                         {% elif character.character_race == 'Gnome' %}
-                        <img src="{{ url_for('static', filename='images/races/canva-gnome.webp') }}" alt="" class="circle responsive-img">
+                        <img src="{{ url_for('static', filename='images/races/canva-gnome.webp') }}" alt="Gnome image" class="circle responsive-img">
                         {% elif character.character_race == 'Half-Elf' %}
-                        <img src="{{ url_for('static', filename='images/races/canva-half-elf.webp') }}" alt="" class="circle responsive-img">
+                        <img src="{{ url_for('static', filename='images/races/canva-half-elf.webp') }}" alt="Half-Elf image" class="circle responsive-img">
                         {% elif character.character_race == 'Halfling' %}
-                        <img src="{{ url_for('static', filename='images/races/canva-halfling.webp') }}" alt="" class="circle responsive-img">
+                        <img src="{{ url_for('static', filename='images/races/canva-halfling.webp') }}" alt="Halfling image" class="circle responsive-img">
                         {% elif character.character_race == 'Half-Orc' %}
-                        <img src="{{ url_for('static', filename='images/races/canva-half-orc.webp') }}" alt="" class="circle responsive-img">
+                        <img src="{{ url_for('static', filename='images/races/canva-half-orc.webp') }}" alt="Half-Orc image" class="circle responsive-img">
                         {% elif character.character_race == 'Human' %}
-                        <img src="{{ url_for('static', filename='images/races/canva-human.webp') }}" alt="" class="circle responsive-img">
+                        <img src="{{ url_for('static', filename='images/races/canva-human.webp') }}" alt="Human image" class="circle responsive-img">
                         {% elif character.character_race == 'Tiefling' %}
-                        <img src="{{ url_for('static', filename='images/races/canva-tiefling.webp') }}" alt="" class="circle responsive-img">
+                        <img src="{{ url_for('static', filename='images/races/canva-tiefling.webp') }}" alt="Tiefling image" class="circle responsive-img">
                         {% endif %}
                     </div>
                     <div class="col s10">
                         <p>{{ character.character_name }}</p>
                         <p>Level {{ character.character_level }} {{character.character_race}} {{character.character_class}}</p>
+                        <div class="center-align">
+                            <a class="waves-effect waves-heavy btn-large red lighten-2" href="{{ url_for('edit_character', character_id=character.id) }}">Edit {{ character.character_name }}</a>
+                        </div>
                     </div>
                 </div>
             </div>

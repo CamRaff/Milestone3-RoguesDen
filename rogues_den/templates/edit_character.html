@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h3 class="center-align white-text red lighten-2">Edit {{ character.character_name }}</h3>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4">
+                {% if character.character_race == 'Dragonborn' %}
+                <img src="{{ url_for('static', filename='images/races/canva-dragonborn.webp') }}" alt="Dragonborn image" class="circle responsive-img">
+                {% elif character.character_race == 'Dwarf' %}
+                <img src="{{ url_for('static', filename='images/races/canva-dwarf.webp') }}" alt="Dwarf image" class="circle responsive-img">
+                {% elif character.character_race == 'Elf' %}
+                <img src="{{ url_for('static', filename='images/races/canva-elf.webp') }}" alt="Elf image" class="circle responsive-img">
+                {% elif character.character_race == 'Gnome' %}
+                <img src="{{ url_for('static', filename='images/races/canva-gnome.webp') }}" alt="Gnome image" class="circle responsive-img">
+                {% elif character.character_race == 'Half-Elf' %}
+                <img src="{{ url_for('static', filename='images/races/canva-half-elf.webp') }}" alt="Half-Elf image" class="circle responsive-img">
+                {% elif character.character_race == 'Halfling' %}
+                <img src="{{ url_for('static', filename='images/races/canva-halfling.webp') }}" alt="Halfling image" class="circle responsive-img">
+                {% elif character.character_race == 'Half-Orc' %}
+                <img src="{{ url_for('static', filename='images/races/canva-half-orc.webp') }}" alt="Half-Orc image" class="circle responsive-img">
+                {% elif character.character_race == 'Human' %}
+                <img src="{{ url_for('static', filename='images/races/canva-human.webp') }}" alt="Human image" class="circle responsive-img">
+                {% elif character.character_race == 'Tiefling' %}
+                <img src="{{ url_for('static', filename='images/races/canva-tiefling.webp') }}" alt="Tiefling image" class="circle responsive-img">
+                {% endif %}
+            </div> 
+            <div class="col s8 offset-s2 center-align m6 offset-m3 l8 offset-l2">
+                <p class="flow-text white-text red lighten-2">{{ character.character_name }}</p>
+                <p class="flow-text white-text red lighten-2">{{ character.character_race }} {{ character.character_class }}</p>
+            </div>
+        </div>
+        <form method="POST" action="{{ url_for('edit_character', character_id=character.id) }}">
+
+            <!-- Character level -->
+            <div class="input-field white-text red lighten-2">
+                <label for="character_level" class="white-text">Level</label>
+                <input type="number" id="character_level" name="character_level" value="{{ character.character_level }}" min="1" max="20" class="white-text" required>
+            </div>
+
+            <!-- Character stats -->
+            <div class="row">
+
+                <div class="input-field col s4 m4 l2 white-text red lighten-2">
+                    <label for="character_strength" class="white-text">Strength</label>
+                    <input type="number" id="character_strength" name="character_strength" value="{{ character.character_strength }}" min="1" max="20" class="white-text" required>
+                </div>
+
+                <div class="input-field col s4 m4 l2 white-text red lighten-2">
+                    <label for="character_dexterity" class="white-text">Dexterity</label>
+                    <input type="number" id="character_dexterity" name="character_dexterity" value="{{ character.character_dexterity }}" min="1" max="20" class="white-text" required>
+                </div>
+            
+
+                <div class="input-field col s4 m4 l2 white-text red lighten-2">
+                    <label for="character_constitution" class="white-text">Constitution</label>
+                    <input type="number" id="character_constitution" name="character_constitution" value="{{ character.character_constitution }}" min="1" max="20" class="white-text" required>
+                </div>
+
+                <div class="input-field col s4 m4 l2 white-text red lighten-2">
+                    <label for="character_intelligence" class="white-text">Intelligence</label>
+                    <input type="number" id="character_intelligence" name="character_intelligence" value="{{ character.character_intelligence}}" min="1" max="20" class="white-text" required>
+                </div>
+
+                <div class="input-field col s4 m4 l2 white-text red lighten-2">
+                    <label for="character_wisdom" class="white-text">Wisdom</label>
+                    <input type="number" id="character_wisdom" name="character_wisdom" value="{{ character.character_wisdom }}" min="1" max="20" class="white-text" required>
+                </div>
+
+                <div class="input-field col s4 m4 l2 white-text red lighten-2">
+                    <label for="character_charisma" class="white-text">Charisma</label>
+                    <input type="number" id="character_charisma" name="character_charisma" value="{{ character.character_charisma }}" min="1" max="20" class="white-text" required>
+                </div>
+            </div>
+
+            <!-- Character background -->
+            <div class="input-field white-text red lighten-2">
+                <label for="character_background" class="white-text">Background</label>
+                <textarea id="character_background" name="character_background" value="{{ character.character_background }}" class="materialize-textarea white-text">{{ character.character_background }}</textarea>
+            </div>
+            
+            <!-- Add character -->
+            <div class="center-align">
+                <button class="btn-large pulse red lighten-2" type="submit"><i class="material-icons">Submit</i></button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

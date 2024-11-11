@@ -9,7 +9,6 @@ routes = Blueprint('routes', __name__)
 
 @app.route('/')
 def home():
-
     return render_template('base.html')
 
 
@@ -23,13 +22,13 @@ def home():
 def profile():
 
     users = Users.query.get(current_user.id)
-
     return render_template('profile.html', users=users)
 
 
 @app.route('/characters')
 @login_required
 def characters():
+    # extracts character data from the database
     characters = Character.query.filter_by(users_id=current_user.id)
     return render_template('characters.html', characters=characters)
 
@@ -82,8 +81,40 @@ def add_character():
                 flash(f"Error creating character: {e}", category="error")
 
         except ValueError:
-            flash("Please ensure all numeric fields contain valid numbers.", category="error")
+            flash("Please ensure all numeric fields contain valid inputs.", category="error")
 
     races = [race for race in Character.__table__.columns.character_race.type.enums]
     classes = [chcls for chcls in Character.__table__.columns.character_class.type.enums]
     return render_template('add_character.html', races=races, classes=classes)
+
+
+@app.route('/edit_character/<int:character_id>', methods=["GET", "POST"])
+@login_required
+def edit_character(character_id):
+
+    character = Character.query.get_or_404(character_id)
+
+    if request.method == "POST":
+        character_level=int(request.form.get("character_level") or 1)
+        character_strength=int(request.form.get("character_strength") or 0)
+        character_dexterity=int(request.form.get("character_dexterity") or 0)
+        character_constitution=int(request.form.get("character_constitution") or 0)
+        character_intelligence=int(request.form.get("character_intelligence") or 0)
+        character_wisdom=int(request.form.get("character_wisdom") or 0)
+        character_charisma=int(request.form.get("character_charisma") or 0)
+        character_background=request.form.get("character_background")
+
+        character.character_level=character_level
+        character.character_strength=character_strength
+        character.character_dexterity=character_dexterity
+        character.character_constitution=character_constitution
+        character.character_intelligence=character_intelligence
+        character.character_wisdom=character_wisdom
+        character.character_charisma=character_charisma
+        character.character_background=character_background
+
+        db.session.commit()
+        flash("Character updated!", category="success")
+        return redirect(url_for('characters'))
+
+    return render_template('edit_character.html', character=character)
