@@ -27,56 +27,56 @@
                 {% endif %}
             </div> 
             <div class="col s8 offset-s2 center-align m6 offset-m3 l8 offset-l2">
-                <p class="flow-text white-text red lighten-2">{{ character.character_name }}</p>
-                <p class="flow-text white-text red lighten-2">Level {{ character.character_level }} {{ character.character_race }} {{ character.character_class }}</p>
+                <p class="flow-text white-text shadow">{{ character.character_name }}</p>
+                <p class="flow-text white-text shadow">Level {{ character.character_level }} {{ character.character_race }} {{ character.character_class }}</p>
             </div>
             <div class="col s4 m4 l4">
-                <p class="center-align white-text red lighten-2">Strength: {{ character.character_strength }}</p>
+                <p class="center-align white-text shadow">Strength: {{ character.character_strength }}</p>
             </div>
 
             <div class="col s4 m4 l4">
-                <p class="center-align white-text red lighten-2">Dexterity: {{ character.character_dexterity }}</p>
+                <p class="center-align white-text shadow">Dexterity: {{ character.character_dexterity }}</p>
             </div>
         
 
             <div class="col s4 m4 l4">
-                <p class="center-align white-text red lighten-2">Constitution: {{ character.character_constitution }}</p>
+                <p class="center-align white-text shadow">Constitution: {{ character.character_constitution }}</p>
             </div>
 
             <div class="col s4 m4 l4">
-                <p class="center-align white-text red lighten-2">Intelligence: {{ character.character_intelligence }}</p>
+                <p class="center-align white-text shadow">Intelligence: {{ character.character_intelligence }}</p>
             </div>
 
             <div class="col s4 m4 l4">
-                <p class="center-align white-text red lighten-2">Wisdom: {{ character.character_wisdom }}</p>
+                <p class="center-align white-text shadow">Wisdom: {{ character.character_wisdom }}</p>
             </div>
 
             <div class="col s4 m4 l4">
-                <p class="center-align white-text red lighten-2">Charisma: {{ character.character_charisma }}</p>
+                <p class="center-align white-text shadow">Charisma: {{ character.character_charisma }}</p>
             </div>
         </div>
 
         <div class="container">
             <!-- Character background -->
-                <div class="charbg white-text red lighten-2">
+                <div class="charbg white-text shadow">
                     <h6 class="center-align white-text">Background</h6>
                     <p class="center-align white-text">{{ character.character_background }}</p>
                 </div>
 
             <!-- Back to characters page -->
             <div class="center-align">
-                <a class="waves-effect waves-heavy btn-large red lighten-2" href="{{ url_for('characters') }}">Back</a>
-                <a class="waves-effect waves-heavy btn-large modal-trigger red lighten-2" href="#modal1">Delete</a>
+                <a class="waves-effect waves-heavy btn-large shadow" href="{{ url_for('characters') }}">Back</a>
+                <a class="waves-effect waves-heavy btn-large modal-trigger shadow" href="#modal1">Delete</a>
             </div>
 
-            <div id="modal1" class="modal">
-                <div class="modal-content center-align white-text red lighten-2">
+            <div id="modal1" class="modal shadow">
+                <div class="modal-content center-align white-text shadow">
                   <h4>Are you sure you want to delete {{ character.character_name }}?</h4>
                   <p>Once you press 'Delete', your character will be gone forever. Are you sure that is what you want to do?</p>
                 </div>
-                <div class="modal-footer white-text red lighten-2">
-                  <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">Cancel</a>
-                  <a href="{{ url_for('delete_character', character_id=character.id) }}" class="modal-close waves-effect waves-green btn-flat white-text">Yes, delete {{ character.character_name }}</a>
+                <div class="center-align shadow">
+                  <a href="#!" class="modal-close waves-effect waves-green btn white-text shadow">Cancel</a>
+                  <a href="{{ url_for('delete_character', character_id=character.id) }}" class="modal-close waves-effect waves-green btn white-text shadow">Yes, delete {{ character.character_name }}</a>
                 </div>
             </div>
         </div>

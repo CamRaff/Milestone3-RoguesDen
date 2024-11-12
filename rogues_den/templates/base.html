@@ -20,7 +20,7 @@
     
     <header>
         <!-- Top Navbar -->
-        <nav class="red lighten-2">
+        <nav class="shadow">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-logo center">Rogues Den</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
@@ -38,17 +38,40 @@
         </nav>
 
         <!-- Mobile SideNav-->
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('characters') }}">Characters</a></li>
-            <li><a href="{{ url_for('profile') }}">Profile</a></li>
-            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
-            <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+        <ul class="sidenav shadow" id="mobile-demo">
+            {% if current_user.is_authenticated %}
+            <li><a class="white-text" href="{{ url_for('characters') }}">Characters</a></li>
+            <li><a class="white-text" href="{{ url_for('profile') }}">Profile</a></li>
+            {% else %}
+            <li><a class="white-text" href="{{ url_for('home') }}">Home</a></li>
+            <li><a class="white-text" href="{{ url_for('auth.login') }}">Login</a></li>
+            <li><a class="white-text" href="{{ url_for('auth.register') }}">Register</a></li>
+            {% endif %}
         </ul>
     </header>
 
     <main class="container">
         {% block content %}
+        <div class="container">
+            <div class="row">
+                <h2 class="white-text center-align shadow">Welcome, to the Rogues Den!</h2>
+            </div>
+            <p class="flow-text white-text center-align shadow">
+                Here at the Rogues Den you'll be able to keep a record of all of the Dungeons and Dragons characters you've created!
+                <br>
+                <br>
+                Simply log in, or register if you haven't already, and head over to the Character page to start your creation!
+                <br>
+                <br>
+                This site is a work in progress, so please be sure to check back for future updates. 
+                <br>
+                <br>
+                From all of us here at Rogues Den HQ, thank you for your support, and we look forward to providing you with the greatest character storage facility possible! 
+                <br>
+                <br>
+                Good luck on your campaigns, and have fun!
+            </p>
+        </div>
         {% endblock %}
     </main>
 
@@ -66,7 +89,7 @@
 
 
 
-    <footer class="page-footer red lighten-2">
+    <footer class="page-footer shadow">
             <div class="container">
                 © 2024 Rogues Den
                 <a class="foottext grey-text text-lighten-4 right" href="https://github.com/CamRaff/Milestone3-RoguesDen" target="_blank">&copy; Rogues Den <i class="fa-brands fa-github"></i></a>

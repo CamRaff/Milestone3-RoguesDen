@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="container">
-        <h3 class="center-align white-text red lighten-2">Login</h3>
+        <h3 class="center-align white-text shadow">Login</h3>
     </div>
 
     <div class="row">
         <form class="col s12 l6 offset-l3" id="loginForm" method="POST" action="{{ url_for('auth.login') }}">
             <div class="row">
                 <!-- Email Address Field -->
-                <div class="input-field col s12 white-text red lighten-2">
+                <div class="input-field col s12 white-text shadow">
                     <input class="white-text" id="email" type="email" name="email" minlength="5" maxlength="55"
                         class="validate" required>
                     <label class="white-text" for="email">Email Address</label>
@@ -18,7 +18,7 @@
             <div class="row">
                 <!-- Password Field -->
                 <div class="textbox tooltipped" data-position="top" data-tooltip="Your password must be at least 7 characters long">
-                    <div class="input-field col s12 white-text red lighten-2">
+                    <div class="input-field col s12 white-text shadow">
                         <input class="white-text" id="password" type="password" name="password" minlength="7"
                             maxlength="255" class="validate" required>
                         <label class="white-text" for="password">Enter Password</label>
@@ -28,12 +28,9 @@
 
             <!-- Submit Button -->
             <div class="center-align">
-                <button class="btn-large pulse red lighten-2" type="submit"><i class="material-icons">Login</i></button>
+                <button class="btn-large shadow" type="submit"><i class="material-icons">Login</i></button>
             </div>
-<br>
-            <!-- <div class="center-align">
-                <button class="btn-large pulse red lighten-2" href="{{ url_for('auth.logout') }}"><i class="material-icons">Login</i></button>
-            </div> -->
+            <br>
         </form>
     </div>
 
