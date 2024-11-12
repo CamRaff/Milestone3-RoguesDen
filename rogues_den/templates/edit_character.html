@@ -7,6 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4">
+                <!-- Elif to display the correct image for the chosen race -->
                 {% if character.character_race == 'Dragonborn' %}
                 <img src="{{ url_for('static', filename='images/races/canva-dragonborn.webp') }}" alt="Dragonborn image" class="circle responsive-img">
                 {% elif character.character_race == 'Dwarf' %}
@@ -87,5 +88,4 @@
             </div>
         </form>
     </div>
-
 {% endblock %}

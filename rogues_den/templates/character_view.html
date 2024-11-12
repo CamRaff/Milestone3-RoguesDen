@@ -5,6 +5,7 @@
     </div>
     <div class="container">
         <div class="row">
+            <!-- Character image -->
             <div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4">
                 {% if character.character_race == 'Dragonborn' %}
                 <img src="{{ url_for('static', filename='images/races/canva-dragonborn.webp') }}" alt="Dragonborn image" class="circle responsive-img">
@@ -25,7 +26,9 @@
                 {% elif character.character_race == 'Tiefling' %}
                 <img src="{{ url_for('static', filename='images/races/canva-tiefling.webp') }}" alt="Tiefling image" class="circle responsive-img">
                 {% endif %}
-            </div> 
+            </div>
+
+            <!-- Character information -->
             <div class="col s8 offset-s2 center-align m6 offset-m3 l8 offset-l2">
                 <p class="flow-text white-text shadow">{{ character.character_name }}</p>
                 <p class="flow-text white-text shadow">Level {{ character.character_level }} {{ character.character_race }} {{ character.character_class }}</p>
@@ -38,7 +41,6 @@
                 <p class="center-align white-text shadow">Dexterity: {{ character.character_dexterity }}</p>
             </div>
         
-
             <div class="col s4 m4 l4">
                 <p class="center-align white-text shadow">Constitution: {{ character.character_constitution }}</p>
             </div>
@@ -63,12 +65,13 @@
                     <p class="center-align white-text">{{ character.character_background }}</p>
                 </div>
 
-            <!-- Back to characters page -->
+            <!-- Back to characters page or delete -->
             <div class="center-align">
                 <a class="waves-effect waves-heavy btn-large shadow" href="{{ url_for('characters') }}">Back</a>
                 <a class="waves-effect waves-heavy btn-large modal-trigger shadow" href="#modal1">Delete</a>
             </div>
 
+            <!-- Modal -->
             <div id="modal1" class="modal shadow">
                 <div class="modal-content center-align white-text shadow">
                   <h4>Are you sure you want to delete {{ character.character_name }}?</h4>
