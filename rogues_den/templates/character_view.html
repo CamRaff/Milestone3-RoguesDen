@@ -66,7 +66,18 @@
             <!-- Back to characters page -->
             <div class="center-align">
                 <a class="waves-effect waves-heavy btn-large red lighten-2" href="{{ url_for('characters') }}">Back</a>
-                <a class="waves-effect waves-heavy btn-large red lighten-2" href="{{ url_for('delete_character', character_id=character.id) }}">Delete?</a>
+                <a class="waves-effect waves-heavy btn-large modal-trigger red lighten-2" href="#modal1">Delete</a>
+            </div>
+
+            <div id="modal1" class="modal">
+                <div class="modal-content center-align white-text red lighten-2">
+                  <h4>Are you sure you want to delete {{ character.character_name }}?</h4>
+                  <p>Once you press 'Delete', your character will be gone forever. Are you sure that is what you want to do?</p>
+                </div>
+                <div class="modal-footer white-text red lighten-2">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">Cancel</a>
+                  <a href="{{ url_for('delete_character', character_id=character.id) }}" class="modal-close waves-effect waves-green btn-flat white-text">Yes, delete {{ character.character_name }}</a>
+                </div>
             </div>
         </div>
     </div>

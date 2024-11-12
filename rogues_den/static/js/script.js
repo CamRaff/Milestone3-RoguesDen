@@ -21,3 +21,8 @@ setTimeout(function() {
   const flashMessages = document.querySelectorAll('.card-panel-message');
   flashMessages.forEach(msg => msg.style.display = 'none');
 }, 5000);
+
+document.addEventListener('DOMContentLoaded', function() {
+  let modal = document.querySelectorAll('.modal');
+  M.Modal.init(modal);
+});
