@@ -3,7 +3,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-image: url('../images/background.webp');
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: overlay;
 }
 
@@ -12,16 +12,29 @@ main {
 }
 
 h3 {
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .input-field {
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 p {
-    border-radius: 10px;
+    border-radius: 5px;
 }
+
+.charbg {
+    border-radius: 5px;
+}
+
+.foottext {
+    margin-bottom: 20px
+}
+
+footer {
+    margin-top: 20px;
+}
+
 
 /* .container {
     background-color: rgba(0,0,0,0.5);

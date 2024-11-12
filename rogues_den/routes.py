@@ -118,3 +118,19 @@ def edit_character(character_id):
         return redirect(url_for('characters'))
 
     return render_template('edit_character.html', character=character)
+
+
+@app.route('/character_view/<int:character_id>', methods=["GET", "POST"])
+@login_required
+def character_view(character_id):
+    # extracts character data from the database
+    character = Character.query.get_or_404(character_id)
+    return render_template('character_view.html', character=character)
+
+
+@app.route('/delete_character/<int:character_id>')
+def delete_character(character_id):
+    character = Character.query.get_or_404(character_id)
+    db.session.delete(character)
+    db.session.commit()
+    return redirect(url_for('characters'))
