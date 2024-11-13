@@ -46,7 +46,7 @@
                     <!-- Character information-->
                     <div class="col s10">
                         <p>{{ character.character_name }}</p>
-                        <p>Level {{ character.character_level }} {{character.character_race}} {{character.character_class}}</p>
+                        <p>Level {{ character.character_level }}<br>{{character.character_race}} {{character.character_class}}</p>
                         <div class="col s5">
                             <!-- View character -->
                             <a class="waves-effect waves-heavy btn-large shadow" href="{{ url_for('character_view', character_id=character.id) }}">View</a>
