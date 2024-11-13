@@ -7,6 +7,13 @@ body {
     background-blend-mode: overlay;
 }
 
+@media screenscreen and (max-width: 700px) {
+    body {
+        background-image: url('../images/mobile-background.webp');
+    }
+    
+}
+
 main {
     flex: 1 0 auto;
 }
