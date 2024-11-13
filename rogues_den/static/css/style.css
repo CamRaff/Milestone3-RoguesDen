@@ -11,10 +11,6 @@ body {
     body {
         background-image: url('../images/mobile-background.webp');
     }
-    
-    .strength p {
-        content: "Str: {{ character.character_strength }}"
-    }
 }
 
 li a:hover {
