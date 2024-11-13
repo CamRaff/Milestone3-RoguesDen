@@ -12,6 +12,13 @@ body {
         background-image: url('../images/mobile-background.webp');
     }
     
+    .strength p {
+        content: "Str: {{ character.character_strength }}"
+    }
+}
+
+li a:hover {
+    color: rgb(0, 253, 190);
 }
 
 main {
