@@ -68,9 +68,9 @@
 
             <!-- Back to characters page or delete -->
             <div class="center-align">
-                <a class="waves-effect waves-heavy btn-large shadow" href="{{ url_for('characters') }}">Back</a>
-                <a class="waves-effect waves-heavy btn-large shadow" href="{{ url_for('edit_character', character_id=character.id) }}">Edit</a>
-                <a class="waves-effect waves-heavy btn-large modal-trigger shadow" href="#modal1">Delete</a>
+                <a class="waves-effect waves-heavy btn-large shadow" href="{{ url_for('characters') }}" aria-label="Back to character page">Back</a>
+                <a class="waves-effect waves-heavy btn-large shadow" href="{{ url_for('edit_character', character_id=character.id) }}" aria-label="Edit character">Edit</a>
+                <a class="waves-effect waves-heavy btn-large modal-trigger shadow" href="#modal1" aria-label="Delete character">Delete</a>
             </div>
 
             <!-- Modal -->
@@ -80,8 +80,8 @@
                   <p>Once you press 'Delete', your character will be gone forever. Are you sure that is what you want to do?</p>
                 </div>
                 <div class="center-align shadow">
-                  <a href="#!" class="modal-close waves-effect waves-green btn white-text shadow">Cancel</a>
-                  <a href="{{ url_for('delete_character', character_id=character.id) }}" class="modal-close waves-effect waves-green btn white-text shadow">Yes, delete {{ character.character_name }}</a>
+                  <a href="#!" class="modal-close waves-effect waves-green btn white-text shadow" aria-label="Cancel and back to view">Cancel</a>
+                  <a href="{{ url_for('delete_character', character_id=character.id) }}" class="modal-close waves-effect waves-green btn white-text shadow" aria-label="Confirm and delete">Yes, delete {{ character.character_name }}</a>
                 </div>
             </div>
         </div>

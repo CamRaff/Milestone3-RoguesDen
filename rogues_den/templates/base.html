@@ -40,16 +40,16 @@
         <!-- Top Navbar -->
         <nav class="shadow">
             <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo center">Rogues Den</a>
+                <a href="{{ url_for('home') }}" class="brand-logo center" aria-label="Home page link and site title">Rogues Den</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if current_user.is_authenticated %}
-                    <li><a href="{{ url_for('characters') }}">Characters</a></li>
-                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('characters') }}" aria-label="Character page link">Characters</a></li>
+                    <li><a href="{{ url_for('profile') }}" aria-label="Profile page link">Profile</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
-                    <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+                    <li><a href="{{ url_for('home') }}" aria-label="Home page link">Home</a></li>
+                    <li><a href="{{ url_for('auth.login') }}" aria-label="Login page link">Login</a></li>
+                    <li><a href="{{ url_for('auth.register') }}" aria-label="Register page link">Register</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -58,12 +58,12 @@
         <!-- Mobile SideNav-->
         <ul class="sidenav shadow" id="mobile-demo">
             {% if current_user.is_authenticated %}
-            <li><a class="white-text" href="{{ url_for('characters') }}">Characters</a></li>
-            <li><a class="white-text" href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a class="white-text" href="{{ url_for('characters') }}" aria-label="Character page link">Characters</a></li>
+            <li><a class="white-text" href="{{ url_for('profile') }}" aria-label="Profile page link">Profile</a></li>
             {% else %}
-            <li><a class="white-text" href="{{ url_for('home') }}">Home</a></li>
-            <li><a class="white-text" href="{{ url_for('auth.login') }}">Login</a></li>
-            <li><a class="white-text" href="{{ url_for('auth.register') }}">Register</a></li>
+            <li><a class="white-text" href="{{ url_for('home') }}" aria-label="Home page link">Home</a></li>
+            <li><a class="white-text" href="{{ url_for('auth.login') }}" aria-label="Login page link">Login</a></li>
+            <li><a class="white-text" href="{{ url_for('auth.register') }}" aria-label="Register page link">Register</a></li>
             {% endif %}
         </ul>
     </header>
@@ -111,7 +111,7 @@
     <footer class="page-footer shadow">
             <div class="container">
                 © 2024 Rogues Den
-                <a class="foottext grey-text text-lighten-4 right" href="https://github.com/CamRaff/Milestone3-RoguesDen" target="_blank">&copy; Rogues Den <i class="fa-brands fa-github"></i></a>
+                <a class="foottext grey-text text-lighten-4 right" href="https://github.com/CamRaff/Milestone3-RoguesDen" aria-label="GitHub link" target="_blank">&copy; Rogues Den <i class="fa-brands fa-github"></i></a>
             </div>
     </footer>
           
