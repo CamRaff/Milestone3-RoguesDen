@@ -136,9 +136,9 @@ As I was originally planning to give users the ability to change and upload thei
 
 <img src="rogues_den/static/images/blank-profile-picture.webp" alt="Blank profile image" height="300">
 
-### Class Images
+### Race Images
 
-The following are the images used as a display of character class. All of these images were acquired using AI from [Canva](https://www.canva.com/). 
+The following are the images used as a display of character race. All of these images were acquired using AI from [Canva](https://www.canva.com/). 
 
 #### Dragonborn
 
@@ -200,8 +200,15 @@ I believe this font was a good choice, as it is clear and easy to read, while al
 
 ## Database Schema and User Journey
 
+### Schema
+
 In order to create the database schema, I used [DB Designer](https://erd.dbdesigner.net/login). The schema was as follows:
 
 <img src="readme_images/db-schema.png" alt="database schema" height="400">
 
 The database was relational, with the Users table linking to the Character table via "db.relationship" and the Character table using the users_id as a foreign key to link the characters created to that specific user. All of the tables created were done using [PostgreSQL](https://www.postgresql.org/).
+
+### Journey
+
+The below flow chart is designed to show the user journey, and I created it using [draw.io](https://www.drawio.com/).
+

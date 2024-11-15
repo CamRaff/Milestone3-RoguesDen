@@ -35,27 +35,27 @@
                 <p class="flow-text white-text shadow">Level {{ character.character_level }} {{ character.character_race }} {{ character.character_class }}</p>
             </div>
             <div class="col s4 m4 l4">
-                <p class="center-align white-text shadow">Strength: {{ character.character_strength }}</p>
+                <p class="center-align white-text shadow" id="strength" data-strength="{{ character.character_strength }}"></p>
             </div>
 
             <div class="col s4 m4 l4">
-                <p class="center-align white-text shadow">Dexterity: {{ character.character_dexterity }}</p>
+                <p class="center-align white-text shadow" id="dexterity" data-dexterity="{{ character.character_dexterity }}"></p>
             </div>
         
             <div class="col s4 m4 l4">
-                <p class="center-align white-text shadow">Constitution: {{ character.character_constitution }}</p>
+                <p class="center-align white-text shadow" id="constitution" data-constitution="{{ character.character_constitution }}"></p>
             </div>
 
             <div class="col s4 m4 l4">
-                <p class="center-align white-text shadow">Intelligence: {{ character.character_intelligence }}</p>
+                <p class="center-align white-text shadow" id="intelligence" data-intelligence="{{ character.character_intelligence }}"></p>
             </div>
 
             <div class="col s4 m4 l4">
-                <p class="center-align white-text shadow">Wisdom: {{ character.character_wisdom }}</p>
+                <p class="center-align white-text shadow" id="wisdom" data-wisdom="{{ character.character_wisdom }}"></p>
             </div>
 
             <div class="col s4 m4 l4">
-                <p class="center-align white-text shadow">Charisma: {{ character.character_charisma }}</p>
+                <p class="center-align white-text shadow" id="charisma" data-charisma="{{ character.character_charisma }}"></p>
             </div>
         </div>
 
@@ -86,4 +86,31 @@
             </div>
         </div>
     </div>
+    <!-- script for changing inner html of stats on smaller screens -->
+    <script>
+        // strength
+        // const character_strength = "{{ character.character_strength }}"
+        // function updateStrength() {
+        //     const strengthElement = document.getElementById("strength");
+
+        //     if (window.innerWidth > 500) {
+        //         strengthElement.innerHTML = "Strength: " + character_strength;
+        //     } else {
+        //         strengthElement.innerHTML = "Str: " + character_strength;
+        //     }
+        // }
+
+        // dexterity
+        // const character_dexterity = "{{ character.character_dexterity }}"
+        // function updateDexterity() {
+        //     const strengthElement = document.getElementById("dexterity");
+
+        //     if (window.innerWidth > 500) {
+        //         strengthElement.innerHTML = "Dexterity: " + character_dexterity;
+        //     } else {
+        //         strengthElement.innerHTML = "Dex: " + character_dexterity;
+        //     }
+        // }
+        
+    </script>
 {% endblock %}
