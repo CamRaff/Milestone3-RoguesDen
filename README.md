@@ -24,6 +24,10 @@ For my third Milestone Project on my course through Code Institute via UCP (Univ
 
   - [Images](#images)
 
+  - [Typography and Color Scheme](#typography-and-color-scheme)
+
+  - [Database Schema and User Journey](#database-schema-and-user-journey)
+
 ---
 
 # User Experience (UX)
@@ -127,3 +131,77 @@ As I have gone with a Dungeons & Dragons style character creation/storage site, 
 Just incase there were any issues displaying the above image on a smaller device, I also got the below created.
 
 <img src="rogues_den/static/images/mobile-background.webp" alt="Background image for mobile showing a dark and grungy cellar" height="400">
+
+As I was originally planning to give users the ability to change and upload their own profile image, I got [ChatGPT](https://chatgpt.com/) to create a blank profile picture as a place holder. Unfortunately I did not end up implementing the change feature but the blank image is visible on the user profiles and appears as below.
+
+<img src="rogues_den/static/images/blank-profile-picture.webp" alt="Blank profile image" height="300">
+
+### Class Images
+
+The following are the images used as a display of character class. All of these images were acquired using AI from [Canva](https://www.canva.com/). 
+
+#### Dragonborn
+
+<img src="rogues_den/static/images/races/canva-dragonborn.webp" alt="Dragonborn image" height="300">
+
+#### Dwarf
+
+<img src="rogues_den/static/images/races/canva-dwarf.webp" alt="Dwarf image" height="300">
+
+#### Elf
+
+<img src="rogues_den/static/images/races/canva-elf.webp" alt="Elf image" height="300">
+
+#### Gnome
+
+<img src="rogues_den/static/images/races/canva-gnome.webp" alt="Gnome image" height="300">
+
+#### Half-Elf
+
+<img src="rogues_den/static/images/races/canva-half-elf.webp" alt="Half-Elf image" height="300">
+
+#### Half-Orc
+
+<img src="rogues_den/static/images/races/canva-half-orc.webp" alt="Half-Orc image" height="300">
+
+#### Halfling
+
+<img src="rogues_den/static/images/races/canva-halfling.webp" alt="Halfling image" height="300">
+
+#### Human
+
+<img src="rogues_den/static/images/races/canva-human.webp" alt="Human image" height="300">
+
+#### Tiefling
+
+<img src="rogues_den/static/images/races/canva-tiefling.webp" alt="Tiefling image" height="300">
+
+### Favicon
+
+I acquired an image from [ChatGPT](https://chatgpt.com/) that I was originally going to use for the Dragonborn race, however I was struggling to use ChatGPT to get images for the rest of the classes, so I decided to go with [Canva](https://www.canva.com/) for those, and kept the original Dragonborn image and used it to created the [Favicon](https://favicon.io/). The image is as follows:
+
+<img src="rogues_den/static/favicon/apple-touch-icon.png" alt="Favicon image" height="300">
+
+## Typography and Color Scheme
+
+As this website had an image for a background, there wasn't much in the way of thought for a color scheme, as the image itself was quite dark due to the nature of the design. The only thing which required thought was what color the fonts would be, and a way to make the input and text boxes stand out slightly from the background itself. 
+
+### Color Scheme
+
+In order to allow for the background to be visible 99% of the time, I opted to use the rgba color format, leaving the red, blue and green options at 0, so they stayed clear, and then edited the opacity to make it slightly more opaque, leaving the background visible but also providing a background for the text. <br> The background was a little too light to provide contrast against the white text I'd decided upon, so I layered the background with rgba(0, 0, 0, 0.5) to give it more of a dark hint, and I added a background of rgba(0, 0, 0, 0.4) to the input and text boxes to provide that a background and further contrast for the text, while also allowing the background image to be visible. 
+
+### Font and Color
+
+To find a suitable font, I went to [Google Fonts](https://fonts.google.com/) and and after a bit of searching came across the 'Cinzel' font. I decided to go with this font as it provided a quite regal feel, which I thought went well with the Dungeons & Dragons vibe I was going for. 
+
+<img src="readme_images/cinzel.png" alt="Cinzel font" height="150">
+
+I believe this font was a good choice, as it is clear and easy to read, while also being very stylized and works well with the theme of the website. 
+
+## Database Schema and User Journey
+
+In order to create the database schema, I used [DB Designer](https://erd.dbdesigner.net/login). The schema was as follows:
+
+<img src="readme_images/db-schema.png" alt="database schema" height="400">
+
+The database was relational, with the Users table linking to the Character table via "db.relationship" and the Character table using the users_id as a foreign key to link the characters created to that specific user. All of the tables created were done using [PostgreSQL](https://www.postgresql.org/).
