@@ -7,7 +7,7 @@ from rogues_den.models import Users, Character
 routes = Blueprint('routes', __name__)
 
 
-@app.route('/home')
+@app.route('/')
 def home():
     return render_template('base.html')
 
