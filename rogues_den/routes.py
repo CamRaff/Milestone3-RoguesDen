@@ -139,3 +139,8 @@ if __name__ == '__main__':
 def force_500_error():
     # Raise an exception to trigger a 500 error
     raise Exception("Intentional 500 error for testing purposes")
+
+
+@app.route('/protected')
+def protected():
+    abort(401)
