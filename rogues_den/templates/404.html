@@ -42,70 +42,29 @@
         <nav class="shadow">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-logo center" aria-label="Home page link and site title">Rogues Den</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fa-solid fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    {% if current_user.is_authenticated %}
-                    <li><a href="{{ url_for('characters') }}" aria-label="Character page link">Characters</a></li>
-                    <li><a href="{{ url_for('profile') }}" aria-label="Profile page link">Profile</a></li>
-                    {% else %}
-                    <li><a href="{{ url_for('home') }}" aria-label="Home page link">Home</a></li>
-                    <li><a href="{{ url_for('auth.login') }}" aria-label="Login page link">Login</a></li>
-                    <li><a href="{{ url_for('auth.register') }}" aria-label="Register page link">Register</a></li>
-                    {% endif %}
-                </ul>
             </div>
         </nav>
-
-        <!-- Mobile SideNav-->
-        <ul class="sidenav shadow" id="mobile-demo">
-            {% if current_user.is_authenticated %}
-            <li><a class="snav white-text" href="{{ url_for('characters') }}" aria-label="Character page link">Characters</a></li>
-            <li><a class="snav white-text" href="{{ url_for('profile') }}" aria-label="Profile page link">Profile</a></li>
-            {% else %}
-            <li><a class="snav white-text" href="{{ url_for('home') }}" aria-label="Home page link">Home</a></li>
-            <li><a class="snav white-text" href="{{ url_for('auth.login') }}" aria-label="Login page link">Login</a></li>
-            <li><a class="snav white-text" href="{{ url_for('auth.register') }}" aria-label="Register page link">Register</a></li>
-            {% endif %}
-        </ul>
     </header>
 
-    <!-- Flash messages -->
-    {% with messages = get_flashed_messages(with_categories=True) %}
-        {% if messages %}
-            <div class="container">
-                {% for category, message in messages %}
-                    <div class="flow-text center-align {{ 'green lighten-4 green-text' if category == 'success' else 'red lighten-4 red-text' }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
-    {% endwith %}
-    
-    <!-- Main content including home page content -->
+    <!-- 404 content -->
     <main class="container">
-        {% block content %}
         <div class="container">
             <div class="row">
-                <h2 class="white-text center-align shadow">Welcome, to the Rogues Den!</h2>
+                <h2 class="white-text center-align shadow">A 404!</h2>
             </div>
             <p class="flow-text white-text center-align shadow">
-                Here at the Rogues Den you'll be able to keep a record of all of the Dungeons and Dragons characters you've created!
+                Unfortunately, it looks like the page you're trying to access doesn't exist. 
                 <br>
                 <br>
-                Simply log in, or register if you haven't already, and head over to the Character page to start your creation!
+                Don't worry, we all make mistakes now and then!
                 <br>
                 <br>
-                This site is a work in progress, so please be sure to check back for future updates. 
+                Click the link below to go back home, and we'll see you there!
                 <br>
                 <br>
-                From all of us here at Rogues Den HQ, thank you for your support, and we look forward to providing you with the greatest character storage facility possible! 
-                <br>
-                <br>
-                Good luck on your campaigns, and have fun!
+                <a class="waves-effect waves-heavy btn-large shadow" href="{{ url_for('home') }}" aria-label="Go back home">Rogues Den</a>
             </p>
         </div>
-        {% endblock %}
     </main>
 
     <!-- Footer -->

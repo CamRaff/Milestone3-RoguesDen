@@ -7,14 +7,9 @@ from rogues_den.models import Users, Character
 routes = Blueprint('routes', __name__)
 
 
-@app.route('/')
+@app.route('/home')
 def home():
     return render_template('base.html')
-
-
-# @app.route('/login')
-# def login():
-#     return render_template('login.html')
 
 
 @app.route('/profile', methods=["GET"])
@@ -134,3 +129,13 @@ def delete_character(character_id):
     db.session.delete(character)
     db.session.commit()
     return redirect(url_for('characters'))
+
+
+if __name__ == '__main__':
+    app.run(debug=False)
+
+
+@app.route('/force-500')
+def force_500_error():
+    # Raise an exception to trigger a 500 error
+    raise Exception("Intentional 500 error for testing purposes")

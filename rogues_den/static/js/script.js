@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // SideNav Initialization
-  let sidenav = document.querySelectorAll('.sidenav');
-  M.Sidenav.init(sidenav);
-
+  // Initialize sidenav and move it to the right side
+  const elems = document.querySelectorAll('.sidenav');
+  M.Sidenav.init(elems, { edge: 'right' }); // Negates default and shifts options to the right
 });
 
 document.addEventListener('DOMContentLoaded', function() {

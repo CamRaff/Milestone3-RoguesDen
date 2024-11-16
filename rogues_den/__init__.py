@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, Blueprint, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 if os.path.exists('env.py'):
@@ -26,7 +26,9 @@ from .models import Users
 
 app.register_blueprint(routes)
 app.register_blueprint(auth)
-# app.register_blueprint(errors)
+
+errors = Blueprint('errors', __name__)
+app.register_blueprint(errors)
 
 # Initializes the LoginManager for use in the app
 login_manager = LoginManager(app)
@@ -39,3 +41,14 @@ login_manager.login_view = 'auth.login'
 @login_manager.user_loader
 def load_user(id):
     return Users.query.get(int(id))
+
+# Global 404 error handler
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+# Global 500 error handler
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
