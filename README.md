@@ -212,3 +212,4 @@ The database was relational, with the Users table linking to the Character table
 
 The below flow chart is designed to show the user journey, and I created it using [draw.io](https://www.drawio.com/).
 
+<img src="readme_images/flowchart.png" alt="user journey" height="400">
