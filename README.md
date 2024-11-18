@@ -32,6 +32,18 @@ For my third Milestone Project on my course through Code Institute via UCP (Univ
 
     - [User Journey](#journey)
 
+  - [Features]
+
+    - [Common Features](#common-features)
+
+    - [Site Pages](#site-pages)
+
+      - [Desktop](#desktop)
+
+      - [Mobile](#mobile)
+
+    - [Delete Modal](#delete-modal)
+
 ---
 
 # User Experience (UX)
@@ -142,7 +154,7 @@ As I was originally planning to give users the ability to change and upload thei
 
 ### Race Images
 
-The following are the images used as a display of character race. All of these images were acquired using AI from [Canva](https://www.canva.com/). 
+The following are the images used as a display of character race. All of these images were acquired using AI from [Canva](https://www.canva.com/). When creating a character, the image displayed will be different for each character depending on which race you have selected for your character. See the [Characters](#characters-page) page for an example.
 
 #### Dragonborn
 
@@ -233,3 +245,99 @@ The site contains a total of 9 pages and are as follows:
 - Edit Character (requires authentication)
 - Custom 404 (error page)
 - Custom 500 (error page)
+
+### Common Features
+
+There are several common features on this site. The navigation bar remains the same accross the site, however the available options change based on user authentication. The footer remains the same across the site. The font I have chosen for the website remains the same across each page and all element types. It works extremely well across the board. Below you can see an image of each of the common features.
+
+#### Navigation Bar - Unauthorized
+
+<img src="readme_images/nav-unauth.png" alt="unauthorized nav bar" height="50">
+
+#### Navigation Bar - Authorized
+
+<img src="readme_images/nav-auth.png" alt="authorized nav bar" height="50">
+
+#### Footer
+
+<img src="readme_images/footer.png" alt="footer" height="50">
+
+### Site Pages
+
+Below you can see all of the site pages on both desktop and mobile.
+
+#### Desktop
+
+##### Home Page
+
+<img src="readme_images/home-desktop.png" alt="Home page on desktop" height="400">
+
+##### Login Page
+
+<img src="readme_images/login-desktop.png" alt="Login page on desktop" height="400">
+
+##### Register Page
+
+<img src="readme_images/register-desktop.png" alt="Register page on desktop" height="400">
+
+##### Characters Page
+
+<img src="readme_images/characters-desktop.png" alt="Characters page on desktop" height="400">
+
+##### Add Characters Page
+
+<img src="readme_images/add-character-desktop.png" alt="Add characters page on desktop" height="400">
+
+All stats are visible with their full title, as it fits well on larger screens. I noticed during development that these titles did not quite fit on mobile, so I added a JavaScript function to change and abbreviate them for mobile.
+
+##### View Character Page
+
+<img src="readme_images/view-character-desktop.png" alt="View character page on desktop" height="400">
+
+I implemented the same change as above for the character view page as well. 
+
+##### Profile Page
+
+<img src="readme_images/profile-desktop.png" alt="Profile page on desktop" height="400">
+
+I had originally planned to have the profile editable, however as full CRUD functionality had been achieved with character creation, I decided that this wasn't a necessary implementation at this time.
+
+#### Mobile
+
+##### Home Page
+
+<img src="readme_images/home-mobile.png" alt="Home page on mobile" height="500">
+
+##### Login Page
+
+<img src="readme_images/login-mobile.png" alt="Login page on mobile" height="500">
+
+##### Register Page
+
+<img src="readme_images/register-mobile.png" alt="Register page on mobile" height="500">
+
+##### Characters Page
+
+<img src="readme_images/characters-mobile.png" alt="Characters page on mobile" height="500">
+
+##### Add Characters Page
+
+<img src="readme_images/add-character-mobile.png" alt="Add characters page on mobile" height="500">
+
+As you can see, the stat titles have changed and are now abbreviated as they are being displayed on a smaller screen.
+
+##### View Character Page
+
+<img src="readme_images/view-character-mobile.png" alt="View character page on mobile" height="500">
+
+As you can see, the stat titles have changed and are now abbreviated as they are being displayed on a smaller screen.
+
+##### Profile
+
+<img src="readme_images/profile-mobile.png" alt="Profile page on mobile" height="500">
+
+### Delete Modal
+
+I added a modal to double check that deleting the chosen character is what the user is wanting to do. The delete button is found on the character view page, and looks as follows:
+
+<img src="readme_images/delete-modal.gif" alt="Delete modal gif" height="500">

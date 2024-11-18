@@ -128,6 +128,7 @@ def delete_character(character_id):
     character = Character.query.get_or_404(character_id)
     db.session.delete(character)
     db.session.commit()
+    flash("Character deleted!", category="success")
     return redirect(url_for('characters'))
 
 
