@@ -1,8 +1,8 @@
 # CamRaff - Milestone Project 3 - Rogues Den
 
-![displays]()
+![displays](readme_images/displays.png)
 
-Here is a link to the deployed site: []()
+Here is a link to the deployed site: [Rogues Den](https://rogues-den-mp3-918bccafa7f4.herokuapp.com/)
 
 For my third Milestone Project on my course through Code Institute via UCP (University centre Peterborough), I thought it would be fun to create my own version of a Dungeons & Dragons character creation/storage site to allow people to keep track of the characters they have, whether it be few or many! In an ideal world, the site I have created would have the capability to allow for the creation of all race/class combinations, however, in order to ensure I can produce the best project I can within the time I have available, I have chosen to limit the race and class choices to those from the Player's Handbook (2014).
 
@@ -14,7 +14,7 @@ For my third Milestone Project on my course through Code Institute via UCP (Univ
 
   - [User Stories](#user-stories)
 
-- [Design and Development](#design-and-development)
+- [Design](#design)
 
   - [Wireframes](#wireframes)
 
@@ -48,6 +48,22 @@ For my third Milestone Project on my course through Code Institute via UCP (Univ
 
     - [Error Pages](#error-pages)
 
+  - [Accessibility](#accessibility)
+
+  - [Future Updates](#future-updateschanges)
+
+- [Development](#development)
+
+  - [Languages](#languages)
+
+  - [Databases](#databases)
+
+  - [Frameworks](#frameworks)
+
+  - [Libraries/Packages](#librariespackages)
+
+  - [Other Programs/Websites](#other-programswebsites)
+
 ---
 
 # User Experience (UX)
@@ -70,7 +86,7 @@ For my third Milestone Project on my course through Code Institute via UCP (Univ
 
 ---
 
-# Design and Development
+# Design
 
 ## Wireframes
 
@@ -226,7 +242,7 @@ In order to create the database schema, I used [DB Designer](https://erd.dbdesig
 
 <img src="readme_images/db-schema.png" alt="database schema" height="400">
 
-The database was relational, with the Users table linking to the Character table via "db.relationship" and the Character table using the users_id as a foreign key to link the characters created to that specific user. All of the tables created were done using [PostgreSQL](https://www.postgresql.org/).
+The database was relational, with the Users table linking to the Character table via "db.relationship" and the Character table using the users_id as a foreign key to link the characters created to that specific user.
 
 ### Journey
 
@@ -367,3 +383,66 @@ The site picks up on 404, 500 and 401 errors, and I created custom error pages f
 The 401 error occurs when trying to access the characters/profile page without being authenticated and directs you to the login page with an error and looks as follows:
 
 <img src="readme_images/401-error.png" alt="401 error" height="400">
+
+## Accessibility
+
+I tried to create this site so it was as user friendly as possible. In order to do this I:
+
+- Developed the website using semantic HTML.
+- Provided alternative and informative text for all images.
+- Provided aria-labels for all links throughout the site that aren't already labelled (like buttons for example).
+- Attempted to provide as much of a colour contrast as possible between the background and the text, while also maintaining the visibility of the background for the best user experience possible.
+
+## Future Updates/Changes
+
+If I were to continue development of this site, there are several features I would like to implement. They are as follows:
+
+- I would like to have email confirmation upon successful registration.
+- I would like to implement more race/class options.
+- I would like to implement a feature which provides a description of the races/classes chosen and their given attributes.
+- I would like to implement profile customization as this was a feature I already wanted and I think it adds an extra bit of personalisation and also links into the next future update point.
+- I like the idea of creating a "campaign" page, where you can join a created campaign with your friends and keep track of the campaign and see how eachothers characters are developing throughout the campaign.
+
+---
+
+# Development
+
+## Languages
+
+This website was created using the following development languages:
+
+- HTML (front-end basics)
+- CSS (front-end customization)
+- JavaScript (front-end functions)
+- Python (back-end)
+
+## Databases
+
+[Postgres](https://www.postgresql.org/) was the platform I used to provide the relational database used to store the tables needed for the site.
+
+## Frameworks
+
+- [Flask](https://flask.palletsprojects.com/en/stable/) was used to build the site utilizing Python.
+- [Materialize](https://materializecss.com/) was used to help create the front-end of the website. This was extremely helpful as it provided built in responsiveness and great features. 
+
+## Libraries/Packages
+
+- [Flask-Login](https://flask-login.readthedocs.io/en/latest/) was used to provide the functionality for registering, logging in and out, and user authentication.
+- [Flas-Blueprints](https://flask.palletsprojects.com/en/stable/tutorial/views/) was used to provide logical organisation of the routes within the app. It's main purpose was to allow me to separate the authentication routes from the regular routes. This was useful as it makes the app a lot easier to maintain and provides a much cleaner development environment.
+- [SQLAlchemy](https://www.sqlalchemy.org/) was used as it simplified the database interaction and allowed me to work directly with the relational database using Python objects.
+- [Flask-SQLAlchemy](https://flask-sqlalchemy.readthedocs.io/en/stable/) was used as another way of interacting directly with the database. 
+
+## Other Programs/Websites
+
+Here is a list of other programs and websites not yet specified previously that I used throughout the development of the site and README:
+
+- [Pip](https://pypi.org/project/pip/) - for installing the necessary packages for development.
+- [Jinja](https://jinja.palletsprojects.com/en/stable/) - a templating language used in Python development to display back-end information on the front-end.
+- [Git](https://git-scm.com/) - used for version control.
+- [GitHub](https://github.com/) - used to save and store the project repository throughout development.
+- [Heroku](https://www.heroku.com/) - used for deployment of the site upon completion.
+- [Gitpod](https://www.gitpod.io/) - the IDE used throughout development (provided by Code Institute).
+- [AmIResponsive](https://ui.dev/amiresponsive) - used to create the main image at the top of the README.
+- [Ezgif](https://ezgif.com/video-to-gif) - used to create the gifs used throughout the README.
+- [Font Awesome](https://fontawesome.com/) - used to acquire the icon used for the GitHub link in the footer.
+- [Google Dev Tools](https://developer.chrome.com/docs/) - was used a means of testing the website throughout its production.
