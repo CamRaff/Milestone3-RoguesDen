@@ -72,7 +72,7 @@
     <!-- Flash messages -->
     {% with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}
-            <div class="container car-panel-message">
+            <div class="container card-panel-message">
                 {% for category, message in messages %}
                     <div class="flow-text center-align {{ 'green lighten-4 green-text' if category == 'success' else 'red lighten-4 red-text' }}">
                         {{ message }}
