@@ -32,7 +32,7 @@ For my third Milestone Project on my course through Code Institute via UCP (Univ
 
     - [User Journey](#journey)
 
-  - [Features]
+  - [Features](#features)
 
     - [Common Features](#common-features)
 
@@ -43,6 +43,10 @@ For my third Milestone Project on my course through Code Institute via UCP (Univ
       - [Mobile](#mobile)
 
     - [Delete Modal](#delete-modal)
+
+    - [Flash Messages](#flash-messages)
+
+    - [Error Pages](#error-pages)
 
 ---
 
@@ -341,3 +345,25 @@ As you can see, the stat titles have changed and are now abbreviated as they are
 I added a modal to double check that deleting the chosen character is what the user is wanting to do. The delete button is found on the character view page, and looks as follows:
 
 <img src="readme_images/delete-modal.gif" alt="Delete modal gif" height="500">
+
+### Flash messages
+
+There are several flash messages implemented in the site. There is one for successful/failed login, successful/failed registration, successful/failed character creation, successfully updated character, character deletion and successful log out.
+
+### Error Pages
+
+The site picks up on 404, 500 and 401 errors, and I created custom error pages for a 404 error and a 500 error. They both follow them same procedure of linking the user back to the home page via a link in the main content. They are the same on both desktop and mobile so I have decided to show only on desktop, and are as follows:
+
+#### 404
+
+<img src="readme_images/404-error.png" alt="404 error page" height="400">
+
+#### 500
+
+<img src="readme_images/500-error.png" alt="500 error page" height="400">
+
+#### 401
+
+The 401 error occurs when trying to access the characters/profile page without being authenticated and directs you to the login page with an error and looks as follows:
+
+<img src="readme_images/401-error.png" alt="401 error" height="400">
