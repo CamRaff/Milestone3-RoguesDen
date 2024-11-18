@@ -28,6 +28,10 @@ For my third Milestone Project on my course through Code Institute via UCP (Univ
 
   - [Database Schema and User Journey](#database-schema-and-user-journey)
 
+    - [Database Schema](#schema)
+
+    - [User Journey](#journey)
+
 ---
 
 # User Experience (UX)
@@ -210,6 +214,22 @@ The database was relational, with the Users table linking to the Character table
 
 ### Journey
 
-The below flow chart is designed to show the user journey, and I created it using [draw.io](https://www.drawio.com/).
+The below flowchart is designed to show the user journey, and I created it using [draw.io](https://www.drawio.com/).
 
 <img src="readme_images/flowchart.png" alt="user journey" height="400">
+
+The flowchart above shows the main navigational routes throughout the website. Naturally there are other links, but to keep the flow chart clear and readable I decided to only show the main routes. The home page is accessible from each page on the website via the title in the navigation bar. Before a user is verified, the navigation bar displays "Home", "Login" and "Register". Following logging in, the navigation bar displays "Characters" and "Profile".
+
+## Features
+
+The site contains a total of 9 pages and are as follows: 
+
+- Home (open to everybody)
+- Login (open to everybody)
+- Register (open to everybody)
+- Characters (requires authentication)
+- Profile (requires authentication)
+- View Character (requires authentication)
+- Edit Character (requires authentication)
+- Custom 404 (error page)
+- Custom 500 (error page)
