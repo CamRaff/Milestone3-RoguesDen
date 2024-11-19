@@ -93,7 +93,7 @@ To test the Python used in the site, I used the [CI Python Linter](https://pep8c
 
 ### __init__.py
 
-The initial test flagged some minor issues like extra blank lines needed, and also flagged an issue with imports being in the wrong place, however they were needed there for app initialization so I had to add "# noqa" beside those lines of code. See below: 
+The initial test flagged some minor issues like extra blank lines needed, and also flagged an issue with imports being in the wrong place, however they were needed there for app initialisation so I had to add "# noqa" beside those lines of code. See below: 
 
 <img src="testing_images/pylint/init-pylint.png" alt="init python lint" height="400">
 
@@ -108,3 +108,91 @@ The initial test flagged quite a lot of "line too long" issues. I rectified the 
 The initial test flagged the same as above. I rectified the lengths and the result was as follows:
 
 <img src="testing_images/pylint/models-pylint.png" alt="models python lint" height="400">
+
+### routes.py
+
+The initial test flagged the same as above. After rectifying the lengths the result was as follows:
+
+<img src="testing_images/pylint/routes-pylint.png" alt="routes python lint" height="400">
+
+## Lighthouse
+
+I used Lighthouse from [Google Dev Tools](https://developer.chrome.com/docs/) to test the performance, accessibility, best practices and SEO of the website on both desktop and mobile, the results were as follows:
+
+### Desktop
+
+#### Home
+
+<img src="testing_images/lighthouse/desktop/home-desktop.png" alt="lighthouse home page test for desktop" height="200">
+
+#### Login
+
+<img src="testing_images/lighthouse/desktop/login-desktop.png" alt="lighthouse login page test for desktop" height="200">
+
+#### Register
+
+<img src="testing_images/lighthouse/desktop/register-desktop.png" alt="lighthouse register page test for desktop" height="200">
+
+#### Characters
+
+<img src="testing_images/lighthouse/desktop/characters-desktop.png" alt="lighthouse characters page test for desktop" height="200">
+
+#### Add Character
+
+<img src="testing_images/lighthouse/desktop/add-character-desktop.png" alt="lighthouse add character page test for desktop" height="200">
+
+The accessibility being lower on this page is due to labels not being set for select options. I rectified this with aria-labels.
+
+#### View Character
+
+<img src="testing_images/lighthouse/desktop/view-character-desktop.png" alt="lighthouse view character page test for desktop" height="200">
+
+#### Edit Character
+
+<img src="testing_images/lighthouse/desktop/edit-character-desktop.png" alt="lighthouse edit character page test for desktop" height="200">
+
+#### Profile
+
+<img src="testing_images/lighthouse/desktop/profile-desktop.png" alt="lighthouse profile page test for desktop" height="200">
+
+The accessibility and SEO being lower on this page is due to a lack of alt text for the profile image. I added some alt text.
+
+### Mobile
+
+There was an accessibility issue on all pages due to a lack of a label for the side navigation provided by Materialize. I rectified this with an aria-label.
+
+#### Home
+
+<img src="testing_images/lighthouse/mobile/home-mobile.png" alt="lighthouse home page test for mobile" height="200">
+
+#### Login
+
+<img src="testing_images/lighthouse/mobile/login-mobile.png" alt="lighthouse login page test for mobile" height="200">
+
+#### Register
+
+<img src="testing_images/lighthouse/mobile/register-mobile.png" alt="lighthouse register page test for mobile" height="200">
+
+#### Characters
+
+<img src="testing_images/lighthouse/mobile/characters-mobile.png" alt="lighthouse characters page test for mobile" height="200">
+
+#### Add Character
+
+<img src="testing_images/lighthouse/mobile/add-character-mobile.png" alt="lighthouse add character page test for mobile" height="200">
+
+The accessibility being lower on this page is due to labels not being set for select options. I rectified this with aria-labels.
+
+#### View Character
+
+<img src="testing_images/lighthouse/mobile/view-character-mobile.png" alt="lighthouse view character page test for mobile" height="200">
+
+#### Edit Character
+
+<img src="testing_images/lighthouse/mobile/edit-character-mobile.png" alt="lighthouse edit character page test for mobile" height="200">
+
+#### Profile
+
+<img src="testing_images/lighthouse/mobile/profile-mobile.png" alt="lighthouse profile page test for mobile" height="200">
+
+The accessibility and SEO being lower on this page is due to a lack of alt text for the profile image. I added some alt text.

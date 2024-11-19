@@ -16,7 +16,7 @@
             <!-- Character Race and Class -->
             <div class="row">
                 <div class="input-field col s6 m6 l6">
-                    <select name="character_race" class="browser-default white-text shadow" required>
+                    <select name="character_race" class="browser-default white-text shadow" required aria-label="Select a Race">
                         <option value="" disabled selected>Select a Race</option>
                         {% for race in races %}
                         <option value="{{ race }}">{{ race }}</option>
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="input-field col s6 m6 l6">
-                    <select name="character_class" class="browser-default white-text shadow" required>
+                    <select name="character_class" class="browser-default white-text shadow" required aria-label="Select a Class">
                         <option value="" disabled selected>Select a Class</option>
                         {% for chcls in classes %}
                         <option value="{{ chcls }}">{{ chcls }}</option>

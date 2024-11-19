@@ -42,7 +42,7 @@
         <nav class="shadow">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-logo center" aria-label="Home page link and site title">Rogues Den</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fa-solid fa-bars"></i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right" aria-label="Menu"><i class="fa-solid fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if current_user.is_authenticated %}
                     <li><a href="{{ url_for('characters') }}" aria-label="Character page link">Characters</a></li>
