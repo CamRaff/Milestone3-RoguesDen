@@ -37,15 +37,19 @@ class Character(db.Model):
     """
     Schema for the Character model
     """
-    
+
     id = db.Column(db.Integer, primary_key=True)
     character_name = db.Column(db.String(20), nullable=False)
-    character_race = db.Column(Enum('Dragonborn', 'Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Halfling',
-                                    'Half-Orc', 'Human', 'Tiefling', name='character_types'),
-                                    nullable=False)
-    character_class = db.Column(Enum('Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
-                                    'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard', 
-                                    name='character_classes'), nullable=False)
+    character_race = db.Column(Enum('Dragonborn', 'Dwarf', 'Elf', 'Gnome',
+                                    'Half-Elf', 'Halfling',
+                                    'Half-Orc', 'Human', 'Tiefling',
+                                    name='character_types'),
+                               nullable=False)
+    character_class = db.Column(Enum('Barbarian', 'Bard', 'Cleric',
+                                     'Druid', 'Fighter', 'Monk',
+                                     'Paladin', 'Ranger', 'Rogue', 'Sorcerer',
+                                     'Warlock', 'Wizard',
+                                     name='character_classes'), nullable=False)
     character_level = db.Column(db.Integer, nullable=False)
     character_strength = db.Column(db.Integer, nullable=False)
     character_dexterity = db.Column(db.Integer, nullable=False)
@@ -55,7 +59,6 @@ class Character(db.Model):
     character_charisma = db.Column(db.Integer, nullable=False)
     character_background = db.Column(db.Text, nullable=False)
     users_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string

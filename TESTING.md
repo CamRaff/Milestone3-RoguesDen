@@ -99,4 +99,6 @@ The initial test flagged some minor issues like extra blank lines needed, and al
 
 ### auth.py
 
-The initial test flagged quite a lot of "line too long" issues. 
+The initial test flagged quite a lot of "line too long" issues. I rectified the line lengths and the result was as follows:
+
+<img src="testing_images/pylint/auth-pylint.png" alt="auth python lint" height="400">
