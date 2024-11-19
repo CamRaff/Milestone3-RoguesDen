@@ -18,11 +18,11 @@ body {
     font-size:large !important;
 }
 
-/* .sidenav, a {
-    font-size: 20px;
-} */
-
 li a:hover {
+    color: rgb(0, 253, 190);
+}
+
+footer a:hover {
     color: rgb(0, 253, 190);
 }
 
