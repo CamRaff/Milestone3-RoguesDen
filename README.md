@@ -63,6 +63,30 @@ For my third Milestone Project on my course through Code Institute via UCP (Univ
   - [Libraries/Packages](#librariespackages)
 
   - [Other Programs/Websites](#other-programswebsites)
+  
+  - [Defensive Programming](#defensive-programming)
+
+  - [Error Handling](#error-handling)
+
+- [Deployment and Local Development](#deployment-and-local-development)
+
+  - [Deployment](#deployment)
+
+  - [Local Development](#local-development)
+
+    - [Fork](#fork)
+
+    - [Clone](#clone)
+
+- [Testing](#testing)
+
+- [Credits](#credits)
+
+  - [Sites](#sites)
+
+  - [Page Content](#page-content)
+
+  - [Acknowledgements](#acknowledgements)
 
 ---
 
@@ -418,7 +442,7 @@ This website was created using the following development languages:
 
 ## Databases
 
-[Postgres](https://www.postgresql.org/) was the platform I used to provide the relational database used to store the tables needed for the site.
+[Postgres](https://www.postgresql.org/) was the platform I used to provide the relational database used to store the tables needed for the site. In the database I had two tables, those being the "Users" table and the "Character" table. The first table was used to store the users desired username, email, first name, last name and password. The second table was used to store all of the details for their created character. Those details were their character name, level, strength, dexterity, constitution, intelligence, wisdom, charisma, and a background for that character. The background is optional, as it often requires a lot more thought so it can be uploaded at a later date via editing the chosen character. 
 
 ## Frameworks
 
@@ -428,7 +452,7 @@ This website was created using the following development languages:
 ## Libraries/Packages
 
 - [Flask-Login](https://flask-login.readthedocs.io/en/latest/) was used to provide the functionality for registering, logging in and out, and user authentication.
-- [Flas-Blueprints](https://flask.palletsprojects.com/en/stable/tutorial/views/) was used to provide logical organisation of the routes within the app. It's main purpose was to allow me to separate the authentication routes from the regular routes. This was useful as it makes the app a lot easier to maintain and provides a much cleaner development environment.
+- [Flask-Blueprints](https://flask.palletsprojects.com/en/stable/tutorial/views/) was used to provide logical organisation of the routes within the app. It's main purpose was to allow me to separate the authentication routes from the regular routes. This was useful as it makes the app a lot easier to maintain and provides a much cleaner development environment.
 - [SQLAlchemy](https://www.sqlalchemy.org/) was used as it simplified the database interaction and allowed me to work directly with the relational database using Python objects.
 - [Flask-SQLAlchemy](https://flask-sqlalchemy.readthedocs.io/en/stable/) was used as another way of interacting directly with the database. 
 
@@ -446,3 +470,97 @@ Here is a list of other programs and websites not yet specified previously that 
 - [Ezgif](https://ezgif.com/video-to-gif) - used to create the gifs used throughout the README.
 - [Font Awesome](https://fontawesome.com/) - used to acquire the icon used for the GitHub link in the footer.
 - [Google Dev Tools](https://developer.chrome.com/docs/) - was used a means of testing the website throughout its production.
+
+## Defensive Programming
+
+I implemented defensive programming as a way of protecting the site, maintaining the database and authenticating users to ensure the site was displayed the way I wanted and the correct data could be brought from the database. Users must be authenticated to view the important parts of the site, like the Character and Profile pages. Some of the defensive methods were: 
+
+- Login required for Character and Profile view.
+- Limitations on string and integer inputs. 
+- Specific requirements for email and passwords. 
+- 401, 404 and 500 error implementation.
+
+## Error Handling
+
+For this site I implented custom 404 and 500 error pages to allow for their customization and to provide a better user experience, which you can see above. As a 500 error is quite hard to force, I added a route to force a 500 error to ensure that it is working, which prompts the browser to provide the 500 error page. The code was as follows: 
+
+<img src="readme_images/500-force.png" alt="force a 500 error code" height="100">
+
+To force this error, simply replace the end of the current url with "/force-500" and you will be provided with the 500 error page you can see above.
+
+# Deployment and Local Development
+
+## Deployment
+
+I deployed this project on Heroku and the steps to do so were as follows: 
+
+1. Create a "requirements.txt" and a "Procfile".
+    - to create the requirements.txt you can type "pip3 freeze --local > requirements.txt" into the terminal.
+    - to create the Procfile you can type "echo web: python run.py > Procfile" into the terminal. You must ensure the P is capitalized and you haven't added any extensions to the end. You will know this has been done correctly if you can see the Heroku logo beside the file name. 
+2. Login (or sign up if you havent already) to Heroku.
+3. Click the "New" button at the top right of the dashboard and select "Create new app".
+4. Add a unique name and select the correct region. Once done, click "Create app".
+5. Connect your created Heroku app to your GitHub repository in the "Deploy" section. You can enable "Automatic Deploys" to ensure all pushed changes deploy straight to Heroku, if you wish.
+6. Head to the "Settings" section and click to "Reveal Config Vars". Once there, input your desired environment variables. See below for an example:
+    | KEY          | VALUE             |
+    | :----------- | :---------------- |
+    | IP           | 0.0.0.0           |
+    | PORT         | 5000              |
+    | SECRET_KEY   | YOUR_SECRET_KEY\* |
+    | DATABASE_URL | POSTGRES_DB\*     |
+    \*Denotes a value that is specific to your app.
+7. Click the "More" button at the top right and select "Run console". Once here, type "python3" and click "Run".
+8. Once inside the terminal, type "from rogues_den import db" and press enter, then type "db.create_all()" and press enter. This will create the tables you've designed in the relational database URL that you've specified in the Config Vars.
+9. Exit the terminal by typing "exit()" and pressing enter.
+10. This may take a few moments, but once complete the app will now be deployed with your desired database tables created and you can now view your functioning creation by clicking the "Open app" button in the top right.
+
+## Local Development
+
+### Fork
+
+To fork this repository, follow these steps: 
+
+1. Log in to GitHub (or sign up).
+2. Go to the repository for this project - <https://github.com/CamRaff/Milestone3-RoguesDen>
+3. Click the "Fork" button on the right, on the same line as the project name.
+4. You will now be ready to work.
+
+### Clone
+
+To clone this repository, follow these steps: 
+
+1. Log in to GitHub (or sign up).
+2. Go to the repository for this project - <https://github.com/CamRaff/Milestone3-RoguesDen>
+3. Click on the "Code" button above the number of commits. 
+4. Select whether you would like to clone with HTTPS, SSH or GitHub CLI, then copy the given link.
+5. Open the terminal in your desired IDE, then select your desired location for the cloned directory.
+6. Type 'git clone' into the terminal, paste the link you copied in step 4 and press enter.
+6. Set up a virtual environment (this step is not required if you are using the Code Institute Template in GitPod as this will already be set up for you).
+7. Install the packages from the requirements.txt file by typing "pip3 install -r requirements.txt into the commant terminal.
+8. You will now be ready to work. 
+
+# Testing
+
+Please see [TESTING.md](TESTING.md) for all testing performed.
+
+# Credits
+
+## Sites
+
+The following are a list of sites I used to help assist me throughout the development process:
+
+- [Treehouse](https://teamtreehouse.com/)
+- [Stack Overflow](https://stackoverflow.com/)
+- [W3 Schools](https://www.w3schools.com/)
+- [ChatGPT](https://chatgpt.com/)
+
+## Page Content
+
+All content for this page was written by Cameron Rafferty.
+
+## Acknowledgements
+
+- [Mark Nevison](https://github.com/mnevison) - Once again my go to for any questions, no matter how big or small, and they're always willing to offer guidance!
+- [Darren Burrows](https://github.com/monkphin/) - They are extremely helpful and have good insight and knowledge!
+- Ronan McClelland - My Code Institute mentor. Very helpful and kind and always willing to help.
+- UCP-15 Discord - For always providing feedback on my project.
