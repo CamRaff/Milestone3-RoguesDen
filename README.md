@@ -466,8 +466,8 @@ Here is a list of other programs and websites not yet specified previously that 
 - [GitHub](https://github.com/) - used to save and store the project repository throughout development.
 - [Heroku](https://www.heroku.com/) - used for deployment of the site upon completion.
 - [Gitpod](https://www.gitpod.io/) - the IDE used throughout development (provided by Code Institute).
-- [AmIResponsive](https://ui.dev/amiresponsive) - used to create the main image at the top of the README.
-- [Ezgif](https://ezgif.com/video-to-gif) - used to create the gifs used throughout the README.
+- [AmIResponsive](https://ui.dev/amiresponsive) - used to create the main image at the top of the README and TESTING documents.
+- [Ezgif](https://ezgif.com/video-to-gif) - used to create the gifs used throughout the README and TESTING documents.
 - [Font Awesome](https://fontawesome.com/) - used to acquire the icon used for the GitHub link in the footer.
 - [Google Dev Tools](https://developer.chrome.com/docs/) - was used a means of testing the website throughout its production.
 

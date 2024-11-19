@@ -14,6 +14,30 @@ Here is a link to the deployed site: [Rogues Den](https://rogues-den-mp3-918bcca
 
     - [CSS Jigsaw](#css-jigsaw)
 
+    - [JavaScript Validator](#javascript-validator)
+
+    - [Python Validator](#python-validator)
+
+        - [init.py](#initpy)
+
+        - [auth.py](#authpy)
+
+        - [models.py](#modelspy)
+
+        - [routes.py](#routespy)
+
+    - [Lighthouse](#lighthouse)
+
+        - [Desktop](#desktop)
+
+        - [Mobile](#mobile)
+
+- [Manual](#manual)
+
+    - [User Stories](#user-stories)
+
+    - [Site Feature Testing](#site-feature-testing)
+
 
 ---
 
@@ -196,3 +220,33 @@ The accessibility being lower on this page is due to labels not being set for se
 <img src="testing_images/lighthouse/mobile/profile-mobile.png" alt="lighthouse profile page test for mobile" height="200">
 
 The accessibility and SEO being lower on this page is due to a lack of alt text for the profile image. I added some alt text.
+
+# Manual
+
+## User Stories
+
+**First Time Visitor Goals**
+
+| Goals | Outcome |
+| ----- | ----- |
+| I am new to Dungeons & Dragons and I want to find a website that will allow me to store my characters from my different campaigns. | I am able to create as many characters as I like, giving them their names, stats and a background. |
+| I want to find a website that is straight forward and easy to use.  | The website is very straight forward and easy to use. You are directed straight to the character page when registering and logging in, and it is clear how to add a character. |
+| I want to find a website which has a great vibe and cool visuals. | The visuals and vibe of the site are really cool. I love the images used and the font fits really well with the theme! |
+
+**Returning Visitor Goals**
+
+| Goals | Outcome |
+| ----- | ----- |
+| I want to be able to update my characters as I level up throughout my campaigns. | The view and edit features make it easy for me to update my characters from my campaigns! |
+
+**Frequent Visitor Goals**
+
+| Goals | Outcome |
+| ----- | ----- |
+| I want to see if there are any new additions to character creation and other features on the site. | The home page of the site tells me it is a work in progress, so I know to check back to see if there have been any exciting updates! |
+
+## Site Feature Testing
+
+In order to streamline the testing process and make this document a bit clearer and display the features better, I have decided to add gifs showing the testing of all features. 
+
+### Navigation 
