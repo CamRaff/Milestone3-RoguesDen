@@ -4,9 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 if os.path.exists('env.py'):
     import env
-from .routes import routes  # importing the routes for the app traversal
-from .auth import auth  # importing the auth routes for login/register/log out
-from .models import Users
 
 
 app = Flask(__name__)
@@ -23,6 +20,12 @@ else:
 
 db = SQLAlchemy(app)
 
+# importing the routes for the app traversal
+from .routes import routes  # noqa # needed here for app initialization
+# importing the auth routes for login/register/log out
+from .auth import auth  # noqa # needed here for app initialization
+# importing the Users model for authentication
+from .models import Users  # noqa #needed here for app initialization
 
 app.register_blueprint(routes)
 app.register_blueprint(auth)
