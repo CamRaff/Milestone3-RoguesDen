@@ -102,3 +102,9 @@ The initial test flagged some minor issues like extra blank lines needed, and al
 The initial test flagged quite a lot of "line too long" issues. I rectified the line lengths and the result was as follows:
 
 <img src="testing_images/pylint/auth-pylint.png" alt="auth python lint" height="400">
+
+### models.py
+
+The initial test flagged the same as above. I rectified the lengths and the result was as follows:
+
+<img src="testing_images/pylint/models-pylint.png" alt="models python lint" height="400">
