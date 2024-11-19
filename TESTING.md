@@ -90,3 +90,13 @@ The undefined variable being flagged is related to the Materialize framework tha
 ## Python Validator
 
 To test the Python used in the site, I used the [CI Python Linter](https://pep8ci.herokuapp.com/). The results for each module were as follows:
+
+### __init__.py
+
+The initial test flagged some minor issues like extra blank lines needed, and also flagged an issue with imports being in the wrong place, however they were needed there for app initialization so I had to add "# noqa" beside those lines of code. See below: 
+
+<img src="testing_images/pylint/init-pylint.png" alt="init python lint" height="400">
+
+### auth.py
+
+The initial test flagged quite a lot of "line too long" issues. 
