@@ -38,6 +38,8 @@ Here is a link to the deployed site: [Rogues Den](https://rogues-den-mp3-918bcca
 
     - [Site Feature Testing](#site-feature-testing)
 
+- [Bugs](#bugs)
+
 
 ---
 
@@ -249,4 +251,48 @@ The accessibility and SEO being lower on this page is due to a lack of alt text 
 
 In order to streamline the testing process and make this document a bit clearer and display the features better, I have decided to add gifs showing the testing of all features. 
 
-### Navigation 
+### Navigation - Unauthorized
+
+The below gif shows the navigational links available to all users functioning, with hover effects, and the footer link functioning with its hover effect.
+
+<img src="testing_images/gifs/navigation-unauthorized.gif" alt="navigation while unauthorized" height="400">
+
+### Registering
+
+The below gif shows the registration process with prompts for passwords, the flash message, the user being directed to the characters page upon registering, as well as the navigation links changing as the user has now been authorized.
+
+<img src="testing_images/gifs/registering.gif" alt="registering" height="400">
+
+### Logging Out
+
+The below gif shows the user being logged out from the profile page, the flash message, the user being returned to the home page and the navigation links changing back as they are now not authorized.
+
+<img src="testing_images/gifs/logging-out.gif" alt="logging out" height="400">
+
+### Loggin In
+
+The below gif shows the user logging in, the flash message, the user being directed to the characters page, as well as navigation links changing as the user is now authorized again.
+
+<img src="testing_images/gifs/logging-in.gif" alt="logging in" height="400">
+
+### Adding Character
+
+The below gif shows being directed to the add character page, creating a character, being redirected to the characters page and the flash message. The background field is not a required field, so I did not add a background. You can also see how the images differ depending on the race you've selected.
+
+<img src="testing_images/gifs/add-character.gif" alt="adding character" height="400">
+
+### Viewing and Editing Character
+
+The below gif shows the character view being accessed, going back to the characters page, accessing the edit page submitting your edits and the flash message.
+
+<img src="testing_images/gifs/view-edit-character.gif" alt="viewing and editing character" height="400">
+
+### Deleting Character
+
+The below gif shows the delete modal, the character being deleted, the user being redirected to the characters page and the flash message. 
+
+<img src="testing_images/gifs/delete-character.gif" alt="deleting a character" height="400">
+
+# Bugs
+
+There is one known issue with the site and that is regarding the responsiveness of the page title on extremely small screens, however the breakpoint for this is at 365 pixels wide, and following a bit of research I found that less than 15% of the world population use phones with a screen that size, so it is not that much of an issue overall. 
