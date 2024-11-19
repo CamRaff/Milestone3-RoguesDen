@@ -26,6 +26,8 @@ Here is a link to the deployed site: [Rogues Den](https://rogues-den-mp3-918bcca
 
         - [routes.py](#routespy)
 
+        - [run.py](#runpy)
+
     - [Lighthouse](#lighthouse)
 
         - [Desktop](#desktop)
@@ -140,6 +142,12 @@ The initial test flagged the same as above. I rectified the lengths and the resu
 The initial test flagged the same as above. After rectifying the lengths the result was as follows:
 
 <img src="testing_images/pylint/routes-pylint.png" alt="routes python lint" height="400">
+
+### run.py
+
+The initial test flagges no issues.
+
+<img src="testing_images/pylint/run-pylint.png" alt="run python lint" height="400">
 
 ## Lighthouse
 
